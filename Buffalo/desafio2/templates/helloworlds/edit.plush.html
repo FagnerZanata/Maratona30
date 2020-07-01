@@ -1,0 +1,8 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Edit HelloWorld</h3>
+</div>
+
+<%= formFor(helloWorld, {action: helloWorldPath({ hello_world_id: helloWorld.ID }), method: "PUT"}) { %>
+  <%= partial("helloworlds/form.html") %>
+  <%= linkTo(helloWorldPath({ hello_world_id: helloWorld.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>

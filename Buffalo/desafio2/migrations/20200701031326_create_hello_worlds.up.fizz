@@ -1,0 +1,4 @@
+create_table("hello_worlds") {
+	t.Column("id", "uuid", {primary: true})
+	t.Timestamps()
+}

@@ -1,0 +1,6 @@
+- id: "hello_world.created.success"
+  translation: "HelloWorld was successfully created."
+- id: "hello_world.updated.success"
+  translation: "HelloWorld was successfully updated."
+- id: "hello_world.destroyed.success"
+  translation: "HelloWorld was successfully destroyed."
