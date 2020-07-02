@@ -1,18 +1,25 @@
-'use strict';
+"use strict";
 
-module.exports.hello = async event => {
+module.exports.soma = async event => {
+  const query = event.queryStringParameters;
+  let body;
+
+  if (!query)
+    body = {
+      error: { message: "Parâmetros invalidos" },
+    };
+  else {
+    const a = Number(query.a);
+    const b = Number(query.b);
+
+    body =
+      !a || !b
+        ? { error: { message: "Parâmetros com valores invalidos" } }
+        : { resultado: a + b };
+  }
+
   return {
     statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v1.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
+    body: JSON.stringify(body, null, 2),
   };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };
